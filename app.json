@@ -1,0 +1,15 @@
+{
+  "expo": {
+   "name": "daily-app",
+   "icon": "./js/logo.png",
+   "version": "1.0.0",
+   "slug": "daily",
+   "sdkVersion": "23.0.0",
+   "ios": {
+     "bundleIdentifier": "com.zianzhang.dailyapp"
+   },
+   "android": {
+     "package": "com.zianzhang.dailyapp"
+   }
+  }
+}
