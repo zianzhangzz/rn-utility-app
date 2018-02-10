@@ -59,13 +59,16 @@ const styles = StyleSheet.create({
     },
     gradient: {
         height: 100,
-        width: 300,
+        width: 150,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 3
+        borderRadius: 3,
+        shadowColor: 'grey',
+        shadowRadius: 5,
+        shadowOpacity: 0.5,
     },
     buttonContainer: {
-        width: 300,
+        width: 150,
         alignItems: 'center',
     },
     buttonText: {
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
         padding: 15,
         marginLeft: 1,
         marginRight: 1,
-        width: 300
+        width: 150
     }
 })
 

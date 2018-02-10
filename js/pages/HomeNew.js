@@ -30,15 +30,12 @@ export default class Home extends Component {
   render() {
     return (
         <View style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {this.renderCard()}
+            <ScrollView showsVerticalScrollIndicator={false} >
+                <View style={styles.innerContainer}>
+                    {this.renderCard()}
+                </View>
             </ScrollView>
         </View>
-
-
-
-
-
     )
   }
 }
@@ -46,8 +43,14 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     container: {
         paddingTop: 20,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1,
+
     },
+    innerContainer: {
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center'
+    }
 
 })
