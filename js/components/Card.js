@@ -35,7 +35,7 @@ export default class Card extends Component {
       const {title, colors} = this.props;
     return (
         <View style={styles.container}>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity onPress={this.props.onPress} style={styles.buttonContainer}>
         
             <LinearGradient
                 colors={colors}

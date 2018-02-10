@@ -1,27 +1,35 @@
 
 import React, { Component } from 'react'
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native'
-import * as scenes from '../constants/scene'
 import { colorArrays } from '../constants/colors'
+import * as scenes from '../constants/scene'
+import { Actions } from 'react-native-router-flux'
+
 import Header from '../components/Header'
 import Card from '../components/Card'
 
 const CardList = [
-    {title: 'Music', colors: colorArrays.pink},
-    {title: 'Movies', colors: colorArrays.orange},
-    {title: 'Videos', colors: colorArrays.teal},
-    {title: 'Books', colors: colorArrays.blue}, 
-    {title: 'News', colors: colorArrays.puple},
-    {title: 'Numbers', colors: colorArrays.pink},
-    {title: 'Gallery', colors: colorArrays.orange},
-    {title: 'Timer', colors: colorArrays.teal}, 
+    {title: 'Music', colors: colorArrays.pink, scene: scenes.SCENE_MUSIC},
+    {title: 'Movies', colors: colorArrays.orange, scene: scenes.SCENE_MUSIC},
+    {title: 'Videos', colors: colorArrays.teal, scene: scenes.SCENE_MUSIC},
+    {title: 'Books', colors: colorArrays.blue, scene: scenes.SCENE_NEWS}, 
+    {title: 'News', colors: colorArrays.puple, scene: scenes.SCENE_NEWS},
+    {title: 'Numbers', colors: colorArrays.pink, scene: scenes.SCENE_NUMBERS},
+    {title: 'Gallery', colors: colorArrays.orange, scene: scenes.SCENE_PICTURES},
+    {title: 'Timer', colors: colorArrays.teal, scene: scenes.SCENE_TIMER}, 
   ]
 export default class Home extends Component {
-
+    onChangeScene = (scene) => {
+        Actions[scene]()
+      }
+      onLink = (url) => {
+        let params = { url: url }
+        Actions[scenes.SCENE_WEB](params)
+      }
     renderCard() {
         return CardList.map(cardInfo => {
             return (
-                <Card title={cardInfo.title} colors={cardInfo.colors}/>
+                <Card title={cardInfo.title} colors={cardInfo.colors} onPress={()=>{this.onChangeScene(cardInfo.scene)}}/>
             )
         }
         )
