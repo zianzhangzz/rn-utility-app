@@ -1,6 +1,6 @@
 {
-  "name": "rn-daily-app",
-  "version": "0.1.0",
+  "name": "rn-utility-app",
+  "version": "1.0.0",
   "private": true,
   "proxy": {
     "/news": {

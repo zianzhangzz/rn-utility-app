@@ -19,3 +19,11 @@ export default colors = {
     blueGrey: '#607D8B',
     grey: '#9E9E9E',
   }
+
+export const colorArrays = {
+  pink: ['#FFA69E','#FF686B','#F25F5C'],
+  orange: ['#E9C46A','#F4A261','#E76F51'],
+  teal: ['#02C39A','#00A896','#028090'],
+  blue: ['#01BAEF','#3380C0','#25609D'],
+  puple: ['#BE95C4','#9F86C0','#5E548E'],
+}

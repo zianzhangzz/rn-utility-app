@@ -9,7 +9,7 @@ import Category from './Category'
 import { HEIGHT, getResponsiveHeight } from '../common/styles'
 import TabNavigator from 'react-native-tab-navigator'
 import { Icon } from 'native-base'
-import Home from './Home'
+import Home from './HomeNew'
 
 export default class Index extends Component {
   closeControlPanel = () => {
