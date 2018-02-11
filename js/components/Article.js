@@ -18,7 +18,7 @@ import { addNews } from '../api/firebase'
 export default class Article extends Component {
 
   onPress = () => {
-    let params = { url: this.props.data.url }
+    let params = { url: this.props.data.url, source: this.props.data.source.name }
     Actions[SCENE_WEB](params)
   }
 
