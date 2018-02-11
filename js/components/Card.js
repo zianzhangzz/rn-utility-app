@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         shadowColor: 'grey',
         shadowRadius: 5,
-        shadowOpacity: 0.5,
+        shadowOpacity: 0.6,
     },
     buttonContainer: {
         width: 150,

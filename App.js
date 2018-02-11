@@ -3,10 +3,12 @@ import { Scene, Router, ActionConst } from 'react-native-router-flux'
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import * as scenes from './js/constants/scene'
-import Index from './js/pages/Index'
+// import Index from './js/pages/Index'
 import { Provider } from 'react-redux'
 import appReducer from './js/reducers';
 
+// import Home from './js/pages/Home'
+import Home from './js/pages/Home'
 import WebView from './js/components/WebView'
 import Music from './js/pages/music/Music'
 import News from './js/pages/news/News'
@@ -23,7 +25,7 @@ export default class AppRouter extends Component {
           <Scene key="root">
             <Scene
               key={scenes.SCENE_INDEX}
-              component={Index}
+              component={Home}
               title="Home"
               type={ActionConst.REPLACE}
               hideNavBar
