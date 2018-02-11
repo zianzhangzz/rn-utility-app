@@ -111,7 +111,7 @@ export default class Pictures extends Component {
   render() {
     return (
       <Container>
-        <Header title={this.state.mode} back={true} />
+        <Header title={this.state.mode} back={true} themeColor={this.props.themeColor} />
           <Grid>
                 <Row size={1}/>
                 <Row style={styles.numContainer} size={5}>

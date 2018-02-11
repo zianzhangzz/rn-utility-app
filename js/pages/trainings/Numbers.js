@@ -106,7 +106,7 @@ export default class Numbers extends Component {
       
     return (
       <Container>
-        <Header title="Numbers" back={true} />
+        <Header title="Numbers" back={true} themeColor={this.props.themeColor} />
             <Grid>
                 <Row style={styles.numContainer} size={6}>
                     <Text style={styles.number}>{this.state.show ? this.state.number: null}</Text>

@@ -39,7 +39,7 @@ class News extends Component {
     return (
         <View style={styles.container}>
           <View style={styles.list}>
-          <Header title={this.state.siteName} back={true}/>
+          <Header title={this.state.siteName} back={true} themeColor={this.props.themeColor} />
             <ArticleList
               articles={this.props.topNews}
               onEndReached={this.onEndReached}

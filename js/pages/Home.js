@@ -19,8 +19,9 @@ const CardList = [
     {title: 'Timer', colors: colorArrays.teal, scene: scenes.SCENE_TIMER}, 
   ]
 export default class Home extends Component {
-    onChangeScene = (scene) => {
-        Actions[scene]()
+    onChangeScene = (scene, colors) => {
+        let params = {themeColor: colors}
+        Actions[scene](params)
       }
       onLink = (url) => {
         let params = { url: url }
@@ -29,7 +30,7 @@ export default class Home extends Component {
     renderCard() {
         return CardList.map(cardInfo => {
             return (
-                <Card title={cardInfo.title} colors={cardInfo.colors} onPress={()=>{this.onChangeScene(cardInfo.scene)}}/>
+                <Card title={cardInfo.title} colors={cardInfo.colors} onPress={()=>{this.onChangeScene(cardInfo.scene, cardInfo.colors)}}/>
             )
         }
         )
@@ -38,7 +39,7 @@ export default class Home extends Component {
   render() {
     return (
         <View style={styles.container} > 
-            <Header title='Home' bg='transparent'/> 
+            <Header title='Home' themeColor={colorArrays.blue}/> 
             <ScrollView showsVerticalScrollIndicator={false} >
             <View style={styles.innerContainer}>
                     {this.renderCard()}

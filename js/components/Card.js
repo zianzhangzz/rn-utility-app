@@ -63,13 +63,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 3,
-        shadowColor: 'grey',
+        shadowColor: 'dimgrey',
         shadowRadius: 5,
         shadowOpacity: 0.6,
-    },
-    buttonContainer: {
-        width: 150,
-        alignItems: 'center',
     },
     buttonText: {
         textAlign: 'center',

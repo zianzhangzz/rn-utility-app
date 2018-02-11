@@ -30,7 +30,7 @@ class Music extends Component {
     // console.log(this.props.topMusic)
     return (
       <Container>
-        <Header title="Music" back={true} />
+        <Header title="Music" back={true} themeColor={this.props.themeColor} />
         <Content padder>
           <List></List>
             {this.renderAlbums(this.props.topMusic)}

@@ -52,7 +52,7 @@ class Pictures extends Component {
     return (
       <Container>
           <Content>
-          <Header title="Gallery" back={true} hasTabs/>
+          <Header title="Gallery" back={true} hasTabs themeColor={this.props.themeColor} />
           <View style={styles.container}>
                 <Button style={styles.btnTab} onPress={this.onBrowse} active={this.state.active} >
                     <Icon name="md-images"/>

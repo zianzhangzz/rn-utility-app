@@ -12,17 +12,17 @@ export default class Headers extends Component {
     if (!this.props.back) return
     return (
       <Button transparent onPress={this.onBack}>
-        <Icon name='arrow-back' />
+        <Icon name='arrow-back' style={{color: 'white'}} />
       </Button>
     )
   }
   render() {
-    const colors = ['#01BAEF','#3380C0','#25609D']
+    const {themeColor} = this.props
 
     return (
         <Header iosBarStyle='light-content' hasTabs={this.props.hasTabs} style={{backgroundColor: 'transparent'}}>
             <LinearGradient
-              colors={colors}
+              colors={themeColor}
               start={{x: 0.8, y: 0.2}} end={{x: 0.2, y: 1.0}} 
               style={styles.gradient}
               >
