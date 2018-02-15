@@ -5,17 +5,25 @@ import { searchMovie } from '../../actions'
 
 import Header from '../../components/Header'
 import CardList from '../../components/CardList'
+import SearchBox from '../../components/SearchBox';
 
 class Movie extends Component {
-    state = {}
+    state = {defalt: 'time', movie: []}
     componentDidMount () {
-        this.props.searchMovie()
+      this.props.searchMovie(this.state.defalt)
     }
-
+    onSearchWord = async (keyword) => {
+      const movie = await this.props.searchMovie(keyword)
+      this.setState({movie})
+    }
+    onClear = () => {
+        this.setState({movie: []})
+    }
   render() {
     return (
       <View>
         <Header title="Movie" back={true} themeColor={this.props.themeColor} />
+        <SearchBox search={this.onSearchWord} onClear={this.onClear}/>
           <ScrollView>
             <CardList data={this.props.movie}/>
           </ScrollView>
