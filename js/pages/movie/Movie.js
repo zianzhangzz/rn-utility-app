@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { ScrollView, View, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-import { Container, Content, List, ListItem, Thumbnail, Text, Body } from 'native-base'
 import { searchMovie } from '../../actions'
 
 import Header from '../../components/Header'
+import CardList from '../../components/CardList'
 
 class Movie extends Component {
     state = {}
@@ -14,9 +14,12 @@ class Movie extends Component {
 
   render() {
     return (
-      <Container>
+      <View>
         <Header title="Movie" back={true} themeColor={this.props.themeColor} />
-      </Container>
+          <ScrollView>
+            <CardList data={this.props.movie}/>
+          </ScrollView>
+      </View>
     );
   }
 }
@@ -26,7 +29,11 @@ const mapDispatchToProps = {
   searchMovie
 }
 
-export default connect(null, mapDispatchToProps)(Movie);
+function mapStateToProps({ movie }) {
+  return { movie };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Movie);
 
 const styles = StyleSheet.create({
   container: {

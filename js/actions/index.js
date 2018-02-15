@@ -60,8 +60,6 @@ export const fetchFavPic = () => async dispatch => {
 
 export const searchMovie = (keyword) => async dispatch => {
     const url = imdbUrl.SEARCH_MOVIE+'Sky'
-    console.log(url)
     const res =  await axios.get(url);
-    console.log(res.data.Search)
-    dispatch({ type: types.SEARCH_MOVIE, payload: res.data });
+    dispatch({ type: types.SEARCH_MOVIE, payload: res.data.Search });
 }
