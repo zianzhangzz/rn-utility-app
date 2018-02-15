@@ -1,7 +1,7 @@
 {
   "expo": {
    "name": "Utility App",
-   "icon": "./js/logo.png",
+   "icon": "./js/logo.ico",
    "version": "1.0.0",
    "slug": "Utility",
    "sdkVersion": "23.0.0",
