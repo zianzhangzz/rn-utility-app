@@ -5,6 +5,7 @@ export const SCENE_CATEGORY = 'CATEGORY'
 
 
 export const SCENE_MUSIC = 'MUSIC'
+export const SCENE_MOVIE = 'MOVIE'
 
 export const SCENE_NEWS = 'NEWS'
 

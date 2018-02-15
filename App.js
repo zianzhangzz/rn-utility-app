@@ -11,6 +11,7 @@ import appReducer from './js/reducers';
 import Home from './js/pages/Home'
 import WebView from './js/components/WebView'
 import Music from './js/pages/music/Music'
+import Movie from './js/pages/movie/Movie'
 import News from './js/pages/news/News'
 import Numbers from './js/pages/trainings/Numbers'
 import Pictures from './js/pages/trainings/Pictures'
@@ -61,7 +62,13 @@ export default class AppRouter extends Component {
               component={Music}
               title="Music"
               hideNavBar
-            />                
+            />   
+            <Scene
+              key={scenes.SCENE_MOVIE}
+              component={Movie}
+              title="Movie"
+              hideNavBar
+            />                          
             <Scene
               key={scenes.SCENE_TIMER}
               component={Timer}

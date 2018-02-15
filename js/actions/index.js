@@ -3,7 +3,7 @@ import * as types from './types';
 import { fetchNews, fetchPic } from '../api/firebase';
 import { getRandomPicSplash } from '../api/unsplash';
 import { getRandomPlaylist } from '../common/utils'
-import { lastFmUrl } from '../api/urls'
+import { lastFmUrl, imdbUrl } from '../api/urls'
 import * as keys from '../api/keys'
 
 const apiKey = '2603c47d6d1349418888897b5ea3abac';
@@ -56,4 +56,12 @@ export const fetchRandomPic = () => async dispatch => {
 export const fetchFavPic = () => async dispatch => {
     const res =  await fetchPic();
     dispatch({ type: types.FETCH_RANDOM_PICS, payload: res });
+}
+
+export const searchMovie = (keyword) => async dispatch => {
+    const url = imdbUrl.SEARCH_MOVIE+'Sky'
+    console.log(url)
+    const res =  await axios.get(url);
+    console.log(res.data.Search)
+    dispatch({ type: types.SEARCH_MOVIE, payload: res.data });
 }

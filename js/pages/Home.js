@@ -10,7 +10,7 @@ import Card from '../components/Card'
 
 const CardList = [
     {title: 'Music', colors: colorArrays.pink, scene: scenes.SCENE_MUSIC},
-    {title: 'Movies', colors: colorArrays.orange, scene: scenes.SCENE_MUSIC},
+    {title: 'Movies', colors: colorArrays.orange, scene: scenes.SCENE_MOVIE},
     {title: 'Videos', colors: colorArrays.teal, scene: scenes.SCENE_MUSIC},
     {title: 'Books', colors: colorArrays.blue, scene: scenes.SCENE_NEWS}, 
     {title: 'News', colors: colorArrays.puple, scene: scenes.SCENE_NEWS},
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#111522'
     },
     innerContainer: {
-        paddingTop: 10,
+        paddingTop: 50,
         paddingHorizontal: 10,
         flexWrap: 'wrap',
         flexDirection: 'row',

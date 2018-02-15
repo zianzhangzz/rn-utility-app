@@ -16,3 +16,8 @@ export const lastFmUrl = {
     TOP_TAGS: `http://ws.audioscrobbler.com/2.0/?method=chart.gettoptags&api_key=${keys.lastFmKey}&format=json`,
     
 }
+
+export const imdbUrl = {
+    BASE_URL: `http://www.omdbapi.com/?apikey=${keys.imdbey}]&`,
+    SEARCH_MOVIE: `http://www.omdbapi.com/?apikey=${keys.imdbey}&type=movie&s=`
+}

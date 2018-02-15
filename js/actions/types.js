@@ -5,3 +5,6 @@ export const FETCH_FAV_NEWS = 'FETCH_FAV_NEWS';
 
 export const FETCH_RANDOM_PICS = 'FETCH_RANDOM_PICS';
 
+export const SEARCH_MOVIE = 'SEARCH_MOVIE';
+
+
