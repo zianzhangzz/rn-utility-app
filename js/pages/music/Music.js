@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { View, ScrollView, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-import { Container, Content, List, ListItem, Thumbnail, Text, Body   } from 'native-base'
+import { Container, List, ListItem, Thumbnail, Text, Body   } from 'native-base'
 import { fetchPlaylistRandom } from '../../actions'
 
 import Header from '../../components/Header'
@@ -16,11 +16,15 @@ class Music extends Component {
       return albums.map(album => {
         return (
           <ListItem>
-            <Thumbnail size={80} source={{uri: album.image[1]['#text']}} />
-            <Body>
-              <Text>{album.name}</Text>
-              <Text note>{album.artist.name}</Text>
-            </Body>
+            <View style={styles.innerContainer}>
+              <Thumbnail size={80} source={{uri: album.image[1]['#text']}} />
+            </View>
+              <Body>
+                <Text>{album.name}</Text>
+                <Text note>{album.artist.name}</Text>
+              </Body>
+
+
           </ListItem>
 
         )
@@ -31,10 +35,11 @@ class Music extends Component {
     return (
       <Container>
         <Header title="Music" back={true} themeColor={this.props.themeColor} />
-        <Content padder>
-          <List></List>
-            {this.renderAlbums(this.props.topMusic)}
-        </Content>
+        <ScrollView>
+          <View style={styles.container}>
+          {this.renderAlbums(this.props.topMusic)}
+          </View>
+        </ScrollView>
       </Container>
     );
   }
@@ -52,8 +57,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(Music);
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around'
+    marginRight: 15,
+    paddingVertical: 15
+  },
+  innerContainer: {
+    paddingLeft: 15
   }
 })
