@@ -1,15 +1,15 @@
 {
   "expo": {
-   "name": "daily-app",
+   "name": "Utility App",
    "icon": "./js/logo.png",
    "version": "1.0.0",
-   "slug": "daily",
+   "slug": "Utility",
    "sdkVersion": "23.0.0",
    "ios": {
-     "bundleIdentifier": "com.zianzhang.dailyapp"
+     "bundleIdentifier": "com.zianzhang.utility"
    },
    "android": {
-     "package": "com.zianzhang.dailyapp"
+     "package": "com.zianzhang.utility"
    }
   }
 }
