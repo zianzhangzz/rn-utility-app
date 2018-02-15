@@ -3,6 +3,7 @@ import { Button, Text, Left, Icon } from 'native-base';
 import { View, StyleSheet } from 'react-native';
 import {tech, business, general} from '../../constants/news';
 import { HEIGHT, WIDTH, getResponsiveHeight } from '../../common/styles'
+import { LinearGradient } from 'expo';
 
 export default class Categories extends Component {
 
@@ -62,20 +63,26 @@ export default class Categories extends Component {
         <View style={styles.container2}>
           { this.renderCate(this.state.category) }
         </View>        
+        <LinearGradient
+                colors={['#C3A5D9','#9F86C0','#8E649E']}
+                start={{x: 0.3, y: 1.0}} end={{x: 1.0, y: 0.6}}
+                style={styles.gradient}
+                >
         <View style={styles.container}>
-        <Button style={styles.btn} onPress={() => this.changeCate(business)} rounded info>
+        <Button style={styles.btn} onPress={() => this.changeCate(business)} rounded >
           <Text >Business</Text>
         </Button>  
-        <Button style={styles.btn} onPress={() => this.changeCate(tech)} rounded success>
-          <Text >Technology</Text>
+        <Button style={styles.btn} onPress={() => this.changeCate(tech)} rounded >
+          <Text >Tech</Text>
         </Button>  
-        <Button style={styles.btn} onPress={() => this.changeCate(general)} rounded warning>
+        <Button style={styles.btn} onPress={() => this.changeCate(general)} rounded >
           <Text >World</Text>
         </Button> 
-        <Button style={styles.btn} onPress={this.onFav} rounded danger>
+        <Button style={styles.btn} onPress={this.onFav} rounded>
           <Icon name='heart' />
         </Button> 
         </View>
+        </LinearGradient>
 
       </View>
 
@@ -86,9 +93,19 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingBottom: 15,
     width: WIDTH-10
   },
+  gradient: {
+    height: 60,
+    width: WIDTH-10,
+    marginBottom: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 3,
+    shadowColor: 'dimgrey',
+    shadowRadius: 5,
+    shadowOpacity: 0.6,
+},
   container2: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -96,7 +113,10 @@ const styles = StyleSheet.create({
     width: WIDTH-10
   },
   btn: {
-    margin: 3
+    margin: 3,
+    backgroundColor: 'transparent',
+    borderColor: 'white',
+    borderWidth: 1
   },
   btn2: {
     margin: 3,

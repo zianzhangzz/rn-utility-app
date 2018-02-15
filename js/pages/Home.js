@@ -8,19 +8,28 @@ import { Actions } from 'react-native-router-flux'
 import Header from '../components/Header'
 import Card from '../components/Card'
 
+const GOODREADS = 'https://www.goodreads.com';
+const YOUTUBE = 'https://www.youtube.com';
+
+
 const CardList = [
     {title: 'Music', colors: colorArrays.pink, scene: scenes.SCENE_MUSIC},
     {title: 'Movies', colors: colorArrays.orange, scene: scenes.SCENE_MOVIE},
-    {title: 'Videos', colors: colorArrays.teal, scene: scenes.SCENE_MUSIC},
-    {title: 'Books', colors: colorArrays.blue, scene: scenes.SCENE_NEWS}, 
+    {title: 'Videos', colors: colorArrays.teal, scene: scenes.SCENE_WEB},
+    {title: 'Books', colors: colorArrays.blue, scene: scenes.SCENE_WEB}, 
     {title: 'News', colors: colorArrays.puple, scene: scenes.SCENE_NEWS},
     {title: 'Numbers', colors: colorArrays.pink, scene: scenes.SCENE_NUMBERS},
     {title: 'Gallery', colors: colorArrays.orange, scene: scenes.SCENE_PICTURES},
     {title: 'Timer', colors: colorArrays.teal, scene: scenes.SCENE_TIMER}, 
   ]
 export default class Home extends Component {
-    onChangeScene = (scene, colors) => {
+    onChangeScene = (title, scene, colors) => {
         let params = {themeColor: colors}
+        if (title === 'Books') {
+            params = {themeColor: colors, url: GOODREADS, source: 'Goodreads'}
+        } else if (title === 'Videos') {
+            params = {themeColor: colors, url: YOUTUBE, source: 'Youtube'}
+        }
         Actions[scene](params)
       }
       onLink = (url) => {
@@ -30,7 +39,7 @@ export default class Home extends Component {
     renderCard() {
         return CardList.map(cardInfo => {
             return (
-                <Card title={cardInfo.title} colors={cardInfo.colors} onPress={()=>{this.onChangeScene(cardInfo.scene, cardInfo.colors)}}/>
+                <Card title={cardInfo.title} colors={cardInfo.colors} onPress={()=>{this.onChangeScene(cardInfo.title, cardInfo.scene, cardInfo.colors)}}/>
             )
         }
         )

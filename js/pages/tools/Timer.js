@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Content, Footer, Card, CardItem, Body, Text, Icon, Button, Badge } from 'native-base'
 import { StyleSheet, View, TouchableHighlight, Picker, Modal } from 'react-native'
 import { Col, Row, Grid } from 'react-native-easy-grid'
+import { LinearGradient } from 'expo';
 
 import Header from '../../components/Header'
 
@@ -114,6 +115,11 @@ export default class Pictures extends Component {
         <Header title={this.state.mode} back={true} themeColor={this.props.themeColor} />
           <Grid>
                 <Row size={1}/>
+                <LinearGradient
+                colors={['#E9C46A','#F4A261','#E76F51']}
+                start={{x: 0.3, y: 1.0}} end={{x: 1.0, y: 0.6}}
+                style={styles.gradient}
+                >
                 <Row style={styles.numContainer} size={5}>
 
                 <Col style={styles.numCol} size={2}>
@@ -137,7 +143,13 @@ export default class Pictures extends Component {
                     :null}      
                 </Col> 
                 </Row>
+                </LinearGradient>
 
+                <LinearGradient
+                colors={['#E9C46A','#F4A261','#E76F51']}
+                start={{x: 0.3, y: 1.0}} end={{x: 1.0, y: 0.6}}
+                style={styles.gradient2}
+                >
                 <Row style={styles.btnContainer} size={2}>
 
                 <Button onPress={this.toggleStart} style={styles.btn}>
@@ -158,6 +170,8 @@ export default class Pictures extends Component {
                       }
                     </Button>        
                 </Row>
+                </LinearGradient>
+                
                 <Row size={1}/>
                 
             </Grid>
@@ -178,13 +192,32 @@ const styles = StyleSheet.create({
       shadowRadius: 5,
       shadowOpacity: 0.5,
       margin: 15,
-      backgroundColor: '#FFC107',
+      backgroundColor: 'transparent',
     
   },
-  btnContainer: {
+  gradient: {
+    height: 350,
+    width: 350,
+    borderRadius: 3,
+    shadowColor: 'dimgrey',
+    shadowRadius: 5,
+    shadowOpacity: 0.6,
+    marginLeft: 12,
+},
+ gradient2: {
+    height: 100,
+    width: 350,
+    borderRadius: 3,
+    shadowColor: 'dimgrey',
+    shadowRadius: 5,
+    shadowOpacity: 0.6,
+    marginLeft: 12,
+    marginTop: 50
+},  
+btnContainer: {
       flexDirection: 'row',
       justifyContent: 'space-around',
-      marginTop: 35
+      marginTop: 15
   },
   number: {
       fontSize: 40,
@@ -198,7 +231,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOpacity: 0.8,
     borderRadius: 50,
-    backgroundColor: '#FFC107',
+    backgroundColor: 'transparent',
     height: 80,
     width: 80
   },

@@ -21,3 +21,7 @@ export const imdbUrl = {
     BASE_URL: `http://www.omdbapi.com/?apikey=${keys.imdbey}]&`,
     SEARCH_MOVIE: `http://www.omdbapi.com/?apikey=${keys.imdbey}&type=movie&s=`
 }
+
+export const goodreadsUrl = {
+    BOOKS: `https://www.goodreads.com/shelf/list.xml?key=${keys.goodreadsKey}&user_id=70763164-zian-zhang`,
+}
